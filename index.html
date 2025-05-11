@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Développeur Full-Stack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-gray-800">Portfolio</span>
+                </div>
+                
+                <!-- Desktop menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="nav-link text-gray-800 font-medium">Accueil</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-gray-800 font-medium">À propos</a>
+                    <a href="#portfolio" class="nav-link text-gray-600 hover:text-gray-800 font-medium">Portfolio</a>
+                    <a href="#services" class="nav-link text-gray-600 hover:text-gray-800 font-medium">Services</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-gray-800 font-medium">Contact</a>
+                    <button id="theme-toggle" class="text-gray-600 hover:text-gray-800">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="theme-toggle-mobile" class="text-gray-600 mr-4">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-gray-800 font-medium">Accueil</a>
+                <a href="#about" class="block py-2 text-gray-600 hover:text-gray-800">À propos</a>
+                <a href="#portfolio" class="block py-2 text-gray-600 hover:text-gray-800">Portfolio</a>
+                <a href="#services" class="block py-2 text-gray-600 hover:text-gray-800">Services</a>
+                <a href="#contact" class="block py-2 text-gray-600 hover:text-gray-800">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+                        Je suis <span class="text-blue-500">Développeur Full-Stack</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-lg">
+                        Je crée des expériences web modernes, performantes et accessibles avec les dernières technologies.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#portfolio" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Voir mes projets <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#contact" class="border-2 border-blue-500 text-blue-500 hover:bg-blue-50 font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Me contacter
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full h-screen bg-cover bg-center animate-fade-in delay-100" 
+                        style="background-image: url('images/Bandeau.png');">
+                    </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">À propos de moi</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Passionné par le développement web depuis plus de 5 ans, je combine créativité et expertise technique pour construire des solutions innovantes.
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/3">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <img src="images/unnamed.jpg" 
+                             alt="Photo de profil" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                        <h3 class="text-xl font-bold text-center text-gray-800 mb-2">ANDRIANIRINA Chatrian Erckmann</h3>
+                        <p class="text-blue-500 text-center mb-4">Développeur Full-Stack</p>
+                        <p class="text-gray-600 text-center mb-6">
+                            Spécialisé en PHP, Typescript et Django avec une solide expérience en conception d'interfaces utilisateur.
+                        </p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/Cire230" class="text-gray-600 hover:text-blue-500 transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/chatrian-erckmann-andrianirina-67a830247/" class="text-gray-600 hover:text-blue-500 transition">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="https://www.facebook.com/cire.chatrian/" class="text-gray-600 hover:text-blue-500 transition">
+                                <i class="fab fa-facebook text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-2/3">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Mes compétences</h3>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">Frontend</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <div class="skill-card bg-gray-50 p-4 rounded-lg border border-gray-200 transition duration-300">
+                                    <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
+                                    <p class="font-medium">HTML5</p>
+                                </div>
+                                <div class="skill-card bg-gray-50 p-4 rounded-lg border border-gray-200 transition duration-300">
+                                    <i class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
+                                    <p class="font-medium">CSS3</p>
+                                </div>
+                                <div class="skill-card bg-gray-50 p-4 rounded-lg border border-gray-200 transition duration-300">
+                                    <i class="fab fa-js text-4xl text-yellow-500 mb-2"></i>
+                                    <p class="font-medium">JavaScript</p>
+                                </div>
+                                <div class="skill-card bg-gray-50 p-4 rounded-lg border border-gray-200 transition duration-300">
+                                    <i class="fab fa-react text-4xl text-blue-400 mb-2"></i>
+                                    <p class="font-medium">React</p>
+                                </div>
+                                <div class="skill-card bg-gray-50 p-4 rounded-lg border border-gray-200 transition duration-300">
+                                    <i class="fab fa-vuejs text-4xl text-green-500 mb-2"></i>
+                                    <p class="font-medium">Vue.js</p>
+                                </div>
+                                <div class="skill-card bg-gray-50 p-4 rounded-lg border border-gray-200 transition duration-300">
+                                    <i class="fab fa-sass text-4xl text-pink-500 mb-2"></i>
+                                    <p class="font-medium">Sass</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">Backend</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <div class="skill-card bg-gray-50 p-4 rounded-lg border border-gray-200 transition duration-300">
+                                    <i class="fab fa-node-js text-4xl text-green-600 mb-2"></i>
+                                    <p class="font-medium">Node.js</p>
+                                </div>
+                                <div class="skill-card bg-gray-50 p-4 rounded-lg border border-gray-200 transition duration-300">
+                                    <i class="fab fa-python text-4xl text-blue-600 mb-2"></i>
+                                    <p class="font-medium">Python</p>
+                                </div>
+                                <div class="skill-card bg-gray-50 p-4 rounded-lg border border-gray-200 transition duration-300">
+                                    <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="Django" class="h-8 mx-auto mb-2 ml-0">
+                                    <p class="font-medium">Django</p>
+                                </div>
+                                <div class="skill-card bg-gray-50 p-4 rounded-lg border border-gray-200 transition duration-300">
+                                    <i class="fas fa-database text-4xl text-blue-700 mb-2"></i>
+                                    <p class="font-medium">MongoDB</p>
+                                </div>
+                                <div class="skill-card bg-gray-50 p-4 rounded-lg border border-gray-200 transition duration-300">
+                                    <i class="fas fa-database text-4xl text-blue-500 mb-2"></i>
+                                    <p class="font-medium">PostgreSQL</p>
+                                </div>
+                                <div class="skill-card bg-gray-50 p-4 rounded-lg border border-gray-200 transition duration-300">
+                                    <i class="fas fa-fire text-4xl text-orange-500 mb-2"></i>
+                                    <p class="font-medium">Firebase</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">Autres compétences</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">SEO</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Responsive Design</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">UI/UX</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Git</span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">API REST</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">GraphQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Mes projets</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Découvrez une sélection de mes réalisations récentes, allant des applications web aux sites vitrines.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="images/Project (1).png" 
+                             alt="Application de gestion" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4">
+                            <!-- <span class="project-tag bg-white text-gray-800 text-xs font-medium px-3 py-1 rounded-full shadow">React</span> -->
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Tableau de bord analytique</h3>
+                        <p class="text-gray-600 mb-4">
+                            Un dashboard interactif offrant une visualisation claire des données clés. Conçu pour faciliter l'analyse et optimiser la prise de décision grâce à des graphiques dynamiques et des statistiques en temps réel.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <a href="https://cire230.github.io/showroom_renodeco/" target="_blank" class="text-blue-500 hover:text-blue-700 font-medium flex items-center">
+                                Voir le projet <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                            <a href="https://cire230.github.io/showroom_renodeco/" target="_blank" class="text-gray-600 hover:text-blue-500">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="images/Project (2).png" 
+                             alt="Site e-commerce" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4">
+                            <!-- <span class="project-tag bg-white text-gray-800 text-xs font-medium px-3 py-1 rounded-full shadow">Vue.js</span> -->
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Site institutionnel pour une association</h3>
+                        <p class="text-gray-600 mb-4">
+                            Un site web vitrine mettant en avant la mission et les activités de l'association. Intuitif et bien structuré, il permet aux visiteurs de découvrir les projets, adhérer ou soutenir l'organisation facilement.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-500 hover:text-blue-700 font-medium flex items-center">
+                                Voir le projet <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-blue-500">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="images/Project (3).png" 
+                             alt="Application mobile" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4">
+                            <!-- <span class="project-tag bg-white text-gray-800 text-xs font-medium px-3 py-1 rounded-full shadow">React Native</span> -->
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Portefeuille de réalisations</h3>
+                        <p class="text-gray-600 mb-4">
+                            Un portfolio moderne et élégant, conçu pour présenter tes compétences et tes projets. Il met en avant ton expertise en design et développement, offrant une expérience immersive et professionnelle aux visiteurs.
+                        </p>
+                        <div class="flex justify-between items-center"> 
+                            <a href="https://cire230.github.io/chatrianerckmann/" target="_blank" class="text-blue-500 hover:text-blue-700 font-medium flex items-center">
+                                Voir le projet <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                            <a href="https://cire230.github.io/chatrianerckmann/" target="_blank" class="text-gray-600 hover:text-blue-500">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <!-- <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Système de gestion" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4">
+                            <span class="project-tag bg-white text-gray-800 text-xs font-medium px-3 py-1 rounded-full shadow">Node.js</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">CRM Entreprise</h3>
+                        <p class="text-gray-600 mb-4">
+                            Système de gestion de la relation client avec tableau de bord analytique et intégration API.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-500 hover:text-blue-700 font-medium flex items-center">
+                                Voir le projet <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-blue-500">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!-- Project 5 -->
+                <!-- <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Site vitrine" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4">
+                            <span class="project-tag bg-white text-gray-800 text-xs font-medium px-3 py-1 rounded-full shadow">Django</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Portfolio Artistique</h3>
+                        <p class="text-gray-600 mb-4">
+                            Site vitrine dynamique avec galerie interactive et système de gestion de contenu personnalisé.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-500 hover:text-blue-700 font-medium flex items-center">
+                                Voir le projet <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-blue-500">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!-- Project 6 -->
+                <!-- <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" 
+                             alt="Application web" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4">
+                            <span class="project-tag bg-white text-gray-800 text-xs font-medium px-3 py-1 rounded-full shadow">Full-Stack</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Réseau Social</h3>
+                        <p class="text-gray-600 mb-4">
+                            Plateforme communautaire avec authentification, publication en temps réel et messagerie instantanée.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-500 hover:text-blue-700 font-medium flex items-center">
+                                Voir le projet <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-blue-500">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://github.com/Cire230?tab=repositories" class="inline-block border-2 border-blue-500 text-blue-500 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition duration-300">
+                    Voir tous les projets <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Mes services</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Je propose une gamme complète de services pour répondre à tous vos besoins en développement web.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="service-icon bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-laptop-code text-2xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-4">Développement Web</h3>
+                    <p class="text-gray-600 text-center">
+                        Création de sites web et applications sur mesure, adaptés à vos besoins spécifiques et optimisés pour les performances.
+                    </p>
+                </div>
+                
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="service-icon bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-4">Applications Responsives</h3>
+                    <p class="text-gray-600 text-center">
+                        Conception d'interfaces adaptatives qui s'ajustent parfaitement à tous les appareils, du mobile au desktop.
+                    </p>
+                </div>
+                
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="service-icon bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-search text-2xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-4">Optimisation SEO</h3>
+                    <p class="text-gray-600 text-center">
+                        Amélioration de la visibilité de votre site dans les moteurs de recherche pour attirer plus de trafic qualifié.
+                    </p>
+                </div>
+                
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="service-icon bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bolt text-2xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-4">Performance Web</h3>
+                    <p class="text-gray-600 text-center">
+                        Optimisation des temps de chargement et des performances pour offrir une expérience utilisateur fluide.
+                    </p>
+                </div>
+                
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="service-icon bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-plug text-2xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-4">Intégration API</h3>
+                    <p class="text-gray-600 text-center">
+                        Connexion de votre application à des services tiers (paiement, cartes, réseaux sociaux, etc.).
+                    </p>
+                </div>
+                
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="service-icon bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-2xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-4">Sécurité Web</h3>
+                    <p class="text-gray-600 text-center">
+                        Mise en place de mesures de sécurité avancées pour protéger vos données et celles de vos utilisateurs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contactez-moi</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Vous avez un projet en tête ou des questions sur mes services ? N'hésitez pas à me contacter.
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Votre nom</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Votre email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Votre message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Envoyer le message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md h-full">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Mes coordonnées</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Adresse</h4>
+                                    <p class="text-gray-600">ITS 13 Bis Andranonahoatra</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Email</h4>
+                                    <p class="text-gray-600">doeric94@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Téléphone</h4>
+                                    <p class="text-gray-600">+261 34 94 303 06</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Disponibilité</h4>
+                                    <p class="text-gray-600">Lundi - Vendredi : 09h - 18h</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="font-bold text-gray-800 mb-4">Suivez-moi</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/chatrian-erckmann-andrianirina-67a830247/" class="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/Cire230" class="bg-gray-800 hover:bg-black text-white p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.facebook.com/cire.chatrian/" class="bg-blue-400 hover:bg-blue-500 text-white p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <!-- <a href="#" class="bg-red-500 hover:bg-red-600 text-white p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-youtube"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <span class="text-xl font-bold">Portfolio</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">
+                        Développeur Full-Stack passionné par la création de solutions web innovantes.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0">
+                    <a href="#home" class="text-gray-400 hover:text-white transition">Accueil</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition">À propos</a>
+                    <a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfolio</a>
+                    <a href="#services" class="text-gray-400 hover:text-white transition">Services</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Portfolio. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
