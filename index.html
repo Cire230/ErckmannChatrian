@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Andrianirina Chatrian Erckmann</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- NOUVELLES BIBLIOTHÈQUES D'ANIMATION -->
+    <!-- GSAP (Le moteur d'animation principal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Vanilla-Tilt.js (Effet 3D au survol) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    
+    <!-- Particles.js (Particules flottantes) -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-inter">
+
+    <!-- NOUVEL OVERLAY PLEIN ÉCRAN (initialement caché) -->
+    <div id="fullscreen-overlay" class="fixed inset-0 bg-black/90 flex items-center justify-center p-8 z-50 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out">
+        <h2 class="text-white text-4xl sm:text-6xl md:text-8xl font-bold text-center leading-tight">
+            ANDRIANIRINA<br>Chatrian Erckmann
+        </h2>
+    </div>
+
+    <!-- LE CONTENEUR PRINCIPAL QUI CRÉE LE CADRE ET L'AMBIANCE -->
+    <div class="main-wrapper">
+
+        <!-- ===== HÉRO CORRIGÉ AVEC GESTION DES COUCHES (z-index) ===== -->
+        <header class="h-screen flex items-center justify-center p-8 relative">
+            
+            <!-- Couche 0: Particules (tout au fond) -->
+            <div id="particles-container" class="absolute inset-0 z-0"></div>
+
+            <!-- Couche 1: Contenu du Héro (au-dessus des particules) -->
+            <div class="relative w-full max-w-[50rem] text-center z-10">
+                
+                <!-- Titre principal -->
+                <h1 id="hero-title" class="font-anton text-8xl sm:text-[150px] md:text-[180px] leading-none text-gray-200">
+                    PORTFOLIO
+                </h1>
+
+                <!-- Textes positionnés de manière absolue (classe de couleur corrigée) -->
+                <p class="absolute top-0 left-0 -translate-y-full text-sm text-gray-500">Front-end</p>
+                <p class="absolute bottom-0 left-0 translate-y-full text-sm text-gray-500">Back-end</p>
+                <p class="absolute bottom-0 right-0 translate-y-full text-sm text-gray-500">ANDRIANIRINA C. E.</p>
+                
+                <!-- Badge 2025 -->
+                <span class="absolute top-0 right-0 translate-x-1/4 -translate-y-1/4 bg-[#FF6B00] text-white text-xs font-bold px-3 py-1 rounded-full">
+                    2025
+                </span>
+
+            </div>
+
+             <!-- Indication de scroll (au-dessus des particules) -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-600 animate-bounce z-10">
+                <i class="fa-solid fa-arrow-down text-2xl"></i>
+            </div>
+        </header>
+
+    <!-- Conteneur principal sans bordure (MODIFIÉ) -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+                <!-- ===== SECTION PRINCIPALE (GRILLE) ===== -->
+                <main class="grid grid-cols-1 md:grid-cols-5 gap-8">
+    
+                    <!-- ======================= -->
+                    <!-- === COLONNE DE GAUCHE === -->
+                    <!-- ======================= -->
+                    <aside class="md:col-span-2 flex flex-col gap-8">
+
+                        <!-- Carte Profil -->
+                        <div class="flex flex-col sm:flex-row gap-6">
+                            <!-- Avatar -->
+                            <!-- CONTENEUR D'AVATAR AVEC ID POUR JAVASCRIPT -->
+                            <div id="avatar-trigger" class="sm:w-1/3 flex-shrink-0 relative rounded-2xl overflow-hidden cursor-pointer">
+                                <img src="img/avatar.jpg" alt="Photo de Chatrian Erckmann" class="w-full h-auto object-cover shadow-lg">
+                            </div>
+
+
+
+                            <!-- Bio & Intérêts -->
+                            <div class="sm:w-2/3 flex flex-col gap-4">
+                                <div class="bg-[#252525] p-6 rounded-2xl flex-grow flex items-center content-card" data-tilt>
+                                    <p class="text-gray-300 leading-relaxed text-sm text-justify">
+                                        Diplômé d'une Licence en Informatique, je suis un intégrateur web passionné par les nouvelles technologies. Fort de mes expériences, je cherche constamment à évoluer et à élargir mes connaissances.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#252525] p-4 rounded-2xl flex flex-wrap items-center justify-between gap-4 content-card" data-tilt>
+                             <h3 class="text-md font-bold text-white">Intérêts</h3>
+                             <div class="flex items-center gap-2">
+                                 <span class="bg-gray-800/60 text-xs px-3 py-1.5 rounded-lg flex items-center gap-2">
+                                     <i class="fa-solid fa-gamepad text-gray-400"></i><span>Gaming</span>
+                                 </span>
+                                 <span class="bg-gray-800/60 text-xs px-3 py-1.5 rounded-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-book-open text-gray-400"></i><span>Lecture</span>
+                                 </span>
+                                 <span class="bg-gray-800/60 text-xs px-3 py-1.5 rounded-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-person-running text-gray-400"></i><span>Footing</span>
+                                 </span>
+                             </div>
+                        </div>
+
+                        <!-- NOUVELLE CARTE COMPÉTENCES AVEC PROGRESS BARS INTERACTIVES -->
+                        <div class="bg-[#252525] p-4 rounded-2xl flex items-center justify-between content-card" data-tilt>
+                            <h3 class="text-md font-bold text-white">Compétences</h3>
+                            <div class="flex items-center gap-4">
+                                
+                                <!-- Compétence: HTML -->
+                                <div class="skill-item">
+                                    <i class="fab fa-html5 text-3xl text-orange-500"></i>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 90%; background-color: #f16529;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Compétence: CSS -->
+                                <div class="skill-item">
+                                    <i class="fab fa-css3-alt text-3xl text-blue-500"></i>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 85%; background-color: #2965f1;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Compétence: JavaScript -->
+                                <div class="skill-item">
+                                    <i class="fab fa-js text-3xl text-yellow-400"></i>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%; background-color: #f7df1e;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Compétence: Python -->
+                                <div class="skill-item">
+                                    <i class="fab fa-python text-3xl text-blue-400"></i>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 70%; background-color: #3572A5;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Compétence: React -->
+                                <div class="skill-item">
+                                    <i class="fab fa-react text-3xl text-cyan-400"></i>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 65%; background-color: #61DAFB;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Compétence: Laravel -->
+                                <div class="skill-item">
+                                    <i class="fab fa-laravel text-3xl text-red-500"></i>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 60%; background-color: #FF2D20;"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        <!-- NOUVELLE CARTE LANGUES AVEC PROGRESS BARS INTERACTIVES -->
+                        <div class="bg-[#252525] p-4 rounded-2xl flex items-center justify-between content-card" data-tilt>
+                            <h3 class="text-md font-bold text-white">Langues</h3>
+                            <div class="flex items-center gap-4">
+                                
+                                <!-- Langue: Malagasy (Natif) -->
+                                <div class="skill-item">
+                                    <span class="text-3xl" title="Malagasy (Natif)">
+                                        <svg width="25px" height="25px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet"><path fill="#FC3D32" d="M32 5H13v13h23V9a4 4 0 0 0-4-4z"></path><path fill="#007E3A" d="M13 31h19a4 4 0 0 0 4-4v-9H13v13z"></path><path fill="#EEE" d="M13 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h9V5z"></path></svg>
+                                    </span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 100%; background-color: #A9A9A9;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Langue: Français (Courant) -->
+                                <div class="skill-item">
+                                    <span class="text-3xl" title="Français (Courant)">
+                                        <svg version="1.1" width="30px" height="30px" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                         viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                        <path style="fill:#41479B;" d="M38.345,88.273C17.167,88.273,0,105.44,0,126.618v258.759c0,21.177,17.167,38.345,38.345,38.345
+                                            h132.322V88.273H38.345z"/>
+                                        <rect x="170.67" y="88.277" style="fill:#F5F5F5;" width="170.67" height="335.45"/>
+                                        <path style="fill:#FF4B55;" d="M473.655,88.273H341.333v335.448h132.322c21.177,0,38.345-17.167,38.345-38.345V126.618
+                                            C512,105.44,494.833,88.273,473.655,88.273z"/>
+                                    </svg>
+                                    </span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 90%; background-color: #A9A9A9;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Langue: Anglais (Intermédiaire) -->
+                                <div class="skill-item">
+                                    <span class="text-3xl" title="Anglais (Intermédiaire)">
+                                        <svg version="1.1" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 130 120" enable-background="new 0 0 130 120" xml:space="preserve">
+                                        <g id="Infos">
+                                            <rect id="BG" x="-200" y="-1350" fill="#D8D8D8" width="2180" height="1700"/>
+                                        </g>
+                                        <g id="Others">
+                                            <g>
+                                                <rect y="0" fill="#DC4437" width="130" height="13.3"/>
+                                                <rect y="26.7" fill="#DC4437" width="130" height="13.3"/>
+                                                <rect y="80" fill="#DC4437" width="130" height="13.3"/>
+                                                <rect y="106.7" fill="#DC4437" width="130" height="13.3"/>
+                                                <rect y="53.3" fill="#DC4437" width="130" height="13.3"/>
+                                                <rect y="13.3" fill="#FFFFFF" width="130" height="13.3"/>
+                                                <rect y="40" fill="#FFFFFF" width="130" height="13.3"/>
+                                                <rect y="93.3" fill="#FFFFFF" width="130" height="13.3"/>
+                                                <rect y="66.7" fill="#FFFFFF" width="130" height="13.3"/>
+                                                <rect y="0" fill="#2A66B7" width="70" height="66.7"/>
+                                                <polygon fill="#FFFFFF" points="13.5,4 15.8,8.9 21,9.7 17.2,13.6 18.1,19 13.5,16.4 8.9,19 9.8,13.6 6,9.7 11.2,8.9"/>
+                                                <polygon fill="#FFFFFF" points="34,4 36.3,8.9 41.5,9.7 37.8,13.6 38.6,19 34,16.4 29.4,19 30.2,13.6 26.5,9.7 31.7,8.9"/>
+                                                <polygon fill="#FFFFFF" points="54.5,4 56.8,8.9 62,9.7 58.2,13.6 59.1,19 54.5,16.4 49.9,19 50.8,13.6 47,9.7 52.2,8.9"/>
+                                                <polygon fill="#FFFFFF" points="24,24 26.3,28.9 31.5,29.7 27.8,33.6 28.6,39 24,36.4 19.4,39 20.2,33.6 16.5,29.7 21.7,28.9"/>
+                                                <polygon fill="#FFFFFF" points="44.5,24 46.8,28.9 52,29.7 48.2,33.6 49.1,39 44.5,36.4 39.9,39 40.8,33.6 37,29.7 42.2,28.9"/>
+                                                <polygon fill="#FFFFFF" points="13.5,45.2 15.8,50.1 21,50.9 17.2,54.7 18.1,60.2 13.5,57.6 8.9,60.2 9.8,54.7 6,50.9 11.2,50.1"/>
+                                                <polygon fill="#FFFFFF" points="34,45.2 36.3,50.1 41.5,50.9 37.8,54.7 38.6,60.2 34,57.6 29.4,60.2 30.2,54.7 26.5,50.931.7,50.1"/>
+                                                <polygon fill="#FFFFFF" points="54.5,45.2 56.8,50.1 62,50.9 58.2,54.7 59.1,60.2 54.5,57.6 49.9,60.2 50.8,54.7 47,50.952.2,50.1"/>
+                                            </g>
+                                        </g>
+                                        <g id="Europe">
+                                            <g id="Row_5"></g>
+                                            <g id="Row_4"></g>
+                                            <g id="Row_3"></g>
+                                            <g id="Row_2"></g>
+                                            <g id="Row_1"></g>
+                                        </g>
+                                    </svg>
+
+                                    </span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 70%; background-color: #A9A9A9;"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </aside>
+
+                    <!-- ====================== -->
+                    <!-- === COLONNE DE DROITE === -->
+                    <!-- ====================== -->
+                    <div class="md:col-span-3 flex flex-col gap-8">
+
+                        <!-- Carte Expérience 1 (Visible) -->
+                        <div class="bg-[#252525] p-6 rounded-2xl content-card" data-tilt>
+                            <!-- ... Contenu de votre expérience chez Linkeo ... -->
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Intégrateur web</h3>
+                                    <p class="text-sm text-gray-400">chez Linkeo</p>
+                                </div>
+                                <span class="bg-gray-900/80 text-xs font-semibold px-2 py-1 rounded-md mt-1">Oct. 2023 - Présent</span>
+                            </div>
+                            <p class="text-sm border-l-4 border-blue-400 pl-4 italic">
+                              Intégration de contenus et modules web sur mesure, en respect des chartes clients.
+                            </p>
+                            <ul class="list-disc list-inside text-gray-400 text-sm space-y-1 mt-4">
+                                <li>Intégration web et paramétrage de divers modules.</li>
+                                <li>Utilisation de l'écosystème interne (Deliver, Planner, Quote).</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Carte Expérience 2 (Visible) -->
+                        <div class="bg-[#252525] p-6 rounded-2xl content-card" data-tilt>
+                            <!-- ... Contenu de votre expérience chez Gazela ... -->
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Développeur web - Django</h3>
+                                    <p class="text-sm text-gray-400">chez l'Association Gazela</p>
+                                </div>
+                                <span class="bg-gray-900/80 text-xs font-semibold px-2 py-1 rounded-md mt-1">Août - Sep. 2023</span>
+                            </div>
+                            <p class="text-sm border-l-4 border-blue-400 pl-4 italic">
+                              Refonte du site vitrine pour valoriser l’image de l’association.
+                            </p>
+                            <ul class="list-disc list-inside text-gray-400 text-sm space-y-1 mt-4">
+                                <li>Développement Frontend & Backend avec Python et Django.</li>
+                            </ul>
+                        </div>
+
+                        <!-- === SECTION DÉROULANTE POUR LES EXPÉRIENCES PLUS ANCIENNES === -->
+                        
+                        <!-- Bouton pour afficher/masquer -->
+                        <button id="toggle-experiences-btn" class="w-full text-center bg-[#252525] hover:bg-[#333] text-gray-300 font-semibold py-3 px-4 rounded-2xl transition-colors duration-300 flex items-center justify-center gap-3">
+                            Voir les expériences plus anciennes
+                            <i id="toggle-icon" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        
+                        <!-- Conteneur des expériences cachées -->
+                        <div id="hidden-experiences" class="experience-dropdown-content flex-col gap-8">
+                            <!-- Carte Expérience 3 (Cachée) -->
+                            <div class="bg-[#252525] p-6 rounded-2xl content-card" data-tilt>
+                                <!-- ... Contenu de votre expérience chez TOHOTRA SARLU ... -->
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-white">Développeur web - React/Laravel/Django</h3>
+                                        <p class="text-sm text-gray-400">chez TOHOTRA SARLU</p>
+                                    </div>
+                                    <span class="bg-gray-900/80 text-xs font-semibold px-2 py-1 rounded-md mt-1">Avr. - Juin. 2023</span>
+                                </div>
+                                <p class="text-sm border-l-4 border-blue-400 pl-4 italic">
+                                  Migration et refonte d’un site e-commerce vers une solution indépendante de WordPress.
+                                </p>
+                                <ul class="list-disc list-inside text-gray-400 text-sm space-y-1 mt-4">
+                                    <li>Stage en tant que développeur full stack.</li>
+                                    <li>Développeur Frontend & Backend (avec React & Laravel)</li>
+                                    <li>Développeur Frontend & Backend (avec Django)</li>
+                                </ul>
+                            </div>
+
+                            <!-- Carte Expérience 4 (Cachée) -->
+                            <div class="bg-[#252525] p-6 mt-6 rounded-2xl content-card" data-tilt>
+                                <!-- ... Contenu de votre expérience chez Dream'in TV ... -->
+                                 <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-white">Développeur web - React/Laravel</h3>
+                                        <p class="text-sm text-gray-400">chez Dream'in TV</p>
+                                    </div>
+                                    <span class="bg-gray-900/80 text-xs font-semibold px-2 py-1 rounded-md mt-1">Mai. - Juil. 2022</span>
+                                </div>
+                                <p class="text-sm border-l-4 border-blue-400 pl-4 italic">
+                                  Développement d’un site dédié à la location de véhicules.
+                                </p>
+                                <ul class="list-disc list-inside text-gray-400 text-sm space-y-1 mt-4">
+                                    <li>Stage en tant que développeur full stack.</li>
+                                    <li>Développeur Frontend & Backend (avec React & Laravel)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- === FIN DE LA SECTION DÉROULANTE === -->
+
+                        <!-- Vos cartes de formation restent ici, inchangées -->
+                        <div class="bg-[#252525] p-6 rounded-2xl content-card" data-tilt>
+                            <!-- ... Contenu de votre Licence ... -->
+                             <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Licence en Informatique</h3>
+                                    <p class="text-sm text-gray-400">ESMIA, Mahamasina</p>
+                                </div>
+                                <span class="bg-gray-900/80 text-xs font-semibold px-2 py-1 rounded-md mt-1">2022 - 2023</span>
+                            </div>
+                        </div>
+                        <div class="bg-[#252525] p-6 rounded-2xl content-card" data-tilt>
+                            <!-- ... Contenu de votre Baccalauréat ... -->
+                             <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Baccalauréat</h3>
+                                    <p class="text-sm text-gray-400">Mention Assez-Bien, Ecole Privé Emeraude</p>
+                                </div>
+                                <span class="bg-gray-900/80 text-xs font-semibold px-2 py-1 rounded-md mt-1">2019 - 2020</span>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                
+                <!-- ===== NOUVELLE SECTION PORTFOLIO & DÉTAILS ===== -->
+                <footer class="mt-16 space-y-6">
+                    <!-- Carte Portfolio Links -->
+                    <div class="bg-[#252525] p-6 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-4 content-card" data-tilt>
+                        <h3 class="text-md font-bold text-white">Portfolio</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://github.com/Cire230" target="_blanck" class="bg-gray-700/80 px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-gray-600 transition-colors"><i class="fa-brands fa-github text-lg"></i><span>GitHub</span></a>
+                            <a href="https://www.linkedin.com/in/chatrian-erckmann-andrianirina-67a830247/" target="_blanck" class="bg-gray-700/80 px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-gray-600 transition-colors"><i class="fa-brands fa-linkedin-in text-lg"></i><span>LinkedIn</span></a>
+                        </div>
+                    </div>
+                    <!-- Carte Details -->
+                    <div class="bg-[#252525] p-6 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-4 content-card" data-tilt>
+                        <h3 class="text-md font-bold text-white">Détails</h3>
+                        <div class="flex flex-wrap gap-3 text-sm">
+                            <span class="bg-gray-700/80 px-4 py-2 rounded-lg flex items-center gap-2"><i class="fa-solid fa-envelope"></i><span>doeric94@gmail.com</span></span>
+                            <span class="bg-gray-700/80 px-4 py-2 rounded-lg flex items-center gap-2"><i class="fa-solid fa-phone"></i><span>+261 34 94 303 06</span></span>
+                            <span class="bg-gray-700/80 px-4 py-2 rounded-lg flex items-center gap-2"><i class="fa-solid fa-location-dot"></i><span>Madagascar</span></span>
+                        </div>
+                    </div>
+
+                    <!-- ===== NOUVEAU PIED DE PAGE MINIMALISTE ===== -->
+                    <div class="mt-16 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4">
+                        
+                        <!-- Copyright -->
+                        <p class="text-sm text-gray-500">
+                            &copy; <span id="current-year">2024</span>. Designed & Developed by A. Chatrian Erckmann.
+                        </p>
+
+                        <!-- Signature -->
+                        <p class="font-signature text-4xl text-gray-400">
+                            Erckmann
+                        </p>
+
+                    </div>
+
+                </footer>
+            <div>
+        </section>     
+
+    <script>
+    // Attend que le contenu de la page soit chargé
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- 1. ANIMATION DU TITRE DU HÉRO (GSAP) ---
+            const heroTitle = document.getElementById('hero-title');
+            const text = heroTitle.textContent;
+            heroTitle.textContent = ''; // Vide le contenu original
+            heroTitle.style.opacity = 1;
+
+            // Découpe le texte en lettres et les injecte dans des <span>
+            text.split('').forEach(char => {
+                const span = document.createElement('span');
+                span.className = 'letter';
+                span.textContent = char === ' ' ? '\u00A0' : char; // Gère les espaces
+                heroTitle.appendChild(span);
+            });
+
+            // Anime les lettres une par une
+            gsap.from('.letter', {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                duration: 1,
+                ease: 'back.out(1.7)',
+                delay: 0.5
+            });
+
+            // --- 2. SPOTLIGHT SUIVANT LE CURSEUR (GSAP) ---
+            const spotlight = document.createElement('div');
+            spotlight.className = 'spotlight';
+            document.body.appendChild(spotlight);
+
+            window.addEventListener('mousemove', (e) => {
+                gsap.to(spotlight, {
+                    x: e.clientX,
+                    y: e.clientY,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                });
+            });
+
+            // --- 3. PARTICULES FLOTTANTES (Particles.js) ---
+            particlesJS('particles-container', {
+                particles: {
+                    number: { value: 50, density: { enable: true, value_area: 800 } },
+                    color: { value: "#4a4a4a" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 2, random: true },
+                    line_linked: { enable: false },
+                    move: { enable: true, speed: 0.5, direction: "none", random: true, straight: false, out_mode: "out" }
+                },
+                interactivity: { detect_on: "canvas", events: { onhover: { enable: false }, onclick: { enable: false } } },
+                retina_detect: true
+            });
+
+            // --- 4. EFFET 3D SUR LES CARTES (Vanilla-Tilt.js) ---
+            VanillaTilt.init(document.querySelectorAll(".content-card"), {
+                max: 10,       // Inclinaison max
+                speed: 400,    // Vitesse de l'animation
+                glare: true,   // Effet de reflet
+                "max-glare": 0.2 // Intensité du reflet
+            });
+            
+            // --- 5. ANIMATION DES CARTES AU SCROLL (GSAP ScrollTrigger) ---
+            gsap.registerPlugin(ScrollTrigger);
+            
+            const cards = gsap.utils.toArray('.content-card');
+            cards.forEach(card => {
+                gsap.from(card, {
+                    opacity: 0,
+                    y: 60,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 90%', // Démarre quand 90% du haut de la carte est visible
+                        toggleActions: 'play none none none',
+                        once: true // L'animation ne se joue qu'une fois
+                    }
+                });
+            });
+            
+            // --- 6. GESTION DU DROPDOWN (votre code existant, inchangé) ---
+            const toggleBtn = document.getElementById('toggle-experiences-btn');
+            if (toggleBtn) {
+                const hiddenContent = document.getElementById('hidden-experiences');
+                const toggleIcon = document.getElementById('toggle-icon');
+
+                toggleBtn.addEventListener('click', () => {
+                    hiddenContent.classList.toggle('open');
+                    toggleIcon.classList.toggle('rotate-180');
+                    const isOpen = hiddenContent.classList.contains('open');
+                    toggleBtn.childNodes[0].nodeValue = isOpen ? 'Masquer les expériences plus anciennes ' : 'Voir les expériences plus anciennes ';
+                });
+            }
+
+            // --- NOUVEAU SCRIPT POUR L'OVERLAY PLEIN ÉCRAN ---
+            const avatarTrigger = document.getElementById('avatar-trigger');
+            const fullscreenOverlay = document.getElementById('fullscreen-overlay');
+
+            if (avatarTrigger && fullscreenOverlay) {
+                // Quand la souris entre sur la photo
+                avatarTrigger.addEventListener('mouseenter', () => {
+                    fullscreenOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                });
+
+                // Quand la souris quitte la photo
+                avatarTrigger.addEventListener('mouseleave', () => {
+                    fullscreenOverlay.classList.add('opacity-0', 'pointer-events-none');
+                });
+            }
+
+            // --- NOUVEAU SCRIPT POUR L'ANNÉE DU COPYRIGHT ---
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+        });
+    </script>
+</body>
+</body>
+</html>

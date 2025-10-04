@@ -1,0 +1,146 @@
+/* ===== 1. IMPORTATIONS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap');
+
+/* ===== 1. IMPORTATIONS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Delius&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Tangerine:wght@400;700&display=swap');
+/* J'ai ajouté 'Parisienne' à la liste */
+
+/* ===== 2. VARIABLES CSS ===== */
+:root {
+    --color-bg: #1a1a1a;         /* Fond principal (charbon) */
+    --color-card: #252525;       /* Fond des cartes, légèrement plus clair */
+    --color-text-light: #E0E0E0; /* Texte principal (gris clair) */
+    --color-text-muted: #888888; /* Texte secondaire */
+    --color-accent-orange: #FF6B00; /* Orange pour le badge */
+    --color-border: rgba(255, 255, 255, 0.1); /* Bordure subtile */
+}
+
+/* ===== 3. STYLES GLOBAUX ===== */
+body {
+    background-color: #000; /* Un fond noir pur pour l'extérieur du cadre */
+    color: var(--color-text-light);
+    font-family: 'Inter', sans-serif;
+    padding: 1.5rem; /* Espace pour voir le cadre */
+    overflow-x: hidden;
+}
+
+/* ===== 4. LE CADRE PRINCIPAL ET L'AMBIANCE (LA CLÉ DU DESIGN) ===== */
+.main-wrapper {
+    background-color: var(--color-bg);
+    /* Superposition des couches de fond */
+    background-image: 
+        /* Couche 1: Bruit (au-dessus) */
+        url('img/noise.png'),
+        /* Couche 2: Vignette pour la profondeur */
+        radial-gradient(
+                      ellipse at center,
+                      rgba(10, 10, 10, 0.8) 0%,
+                      rgba(0, 0, 0, 0.95) 100%);
+    
+    border: 1px solid var(--color-border);
+    border-radius: 1rem; /* Coins arrondis du cadre */
+    overflow: hidden; /* Assure que rien ne dépasse du cadre */
+}
+
+/* ===== 5. STYLES SPÉCIFIQUES ===== */
+.font-anton { font-family: 'Anton', sans-serif; }
+
+/* Styles pour les cartes dans la section principale */
+.content-card {
+    background-color: var(--color-card);
+}
+
+
+/* ===== 4. CONFIGURATION TAILWIND (à ajouter dans un fichier JS si vous installez Tailwind) ===== */
+/* Note : J'utilise des variables CSS pour que vous n'ayez pas besoin d'un fichier de config. */
+.bg-brand-dark { background-color: var(--color-dark); }
+.bg-card { background-color: var(--color-card); }
+
+/* Le conteneur qui sera animé */
+.experience-dropdown-content {
+    max-height: 0; /* État initial : complètement replié */
+    overflow: hidden; /* Cache le contenu qui dépasse */
+    transition: max-height 0.5s ease-in-out; /* L'animation ! */
+}
+
+/* L'état "ouvert" */
+.experience-dropdown-content.open {
+    max-height: 1000px; /* Une hauteur suffisante pour contenir vos expériences. L'animation s'arrêtera à la hauteur réelle du contenu. */
+}
+
+/* ===== STYLES POUR LES COMPÉTENCES INTERACTIVES ===== */
+
+/* Conteneur pour chaque icône + barre de progression */
+.skill-item {
+    position: relative; /* Indispensable pour positionner la barre en absolu */
+    padding-bottom: 12px; /* Laisse de la place en bas pour la barre */
+}
+
+/* La barre de progression (le conteneur gris) */
+.progress-bar {
+    position: absolute;
+    bottom: 0; /* Positionnée tout en bas du .skill-item */
+    left: 50%;
+    transform: translateX(-50%); /* Centrée horizontalement */
+    width: 32px; /* Largeur de la barre */
+    height: 4px;
+    background-color: #444; /* Couleur de fond de la barre */
+    border-radius: 2px;
+    
+    /* Animation d'apparition */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Le remplissage coloré de la barre */
+.progress-fill {
+    height: 100%;
+    border-radius: 2px;
+}
+
+/* L'effet au survol ! */
+.skill-item:hover .progress-bar {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== 1. SMOOTH SCROLLING ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== 2. STYLE POUR LE CURSEUR SPOTLIGHT ===== */
+.spotlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%);
+    pointer-events: none; /* TRÈS IMPORTANT */
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* ===== 3. STYLE POUR LES PARTICULES ===== */
+#particles-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0; /* Derrière le contenu */
+}
+
+/* ===== 4. STYLE POUR L'ANIMATION DES LETTRES (optionnel) ===== */
+#hero-title {
+    /* Cache le texte original avant que JS le découpe */
+    opacity: 0;
+}
+.letter {
+    display: inline-block; /* Nécessaire pour animer chaque lettre */
+}
+
+/* ... dans la section des styles spécifiques ... */
+.font-signature {
+    font-family: 'Tangerine', cursive;
+}
